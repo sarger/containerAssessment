@@ -1,0 +1,13 @@
+D:\Development\ContainersApp\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+D:\Development\ContainersApp\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+D:\Development\ContainersApp\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\Common.deps.json
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\Common.dll
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\Common.pdb
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\System.Configuration.dll
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\System.Security.dll
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\System.Configuration.xml
+D:\Development\ContainersApp\Common\bin\Debug\netstandard2.0\System.Security.xml
+D:\Development\ContainersApp\Common\obj\Debug\netstandard2.0\Common.csproj.CopyComplete
+D:\Development\ContainersApp\Common\obj\Debug\netstandard2.0\Common.dll
+D:\Development\ContainersApp\Common\obj\Debug\netstandard2.0\Common.pdb

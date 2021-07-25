@@ -1,0 +1,118 @@
+﻿<br />
+<br />
+<h3> Type </h3>
+<br />
+<script src="~/Scripts/Container/TypeJs.js?id=3xxx002"></script>
+<div id="typeModeldiv">
+
+    <div id="errormessage" data-bind="text:ErrorMessage(),click: function(){ $root.ErrorMessage('');}"> </div>
+
+    <div style="text-align:right">
+        <a href="#" data-bind="visible:ShowAddType(),click: function(){ $root.ShowOrHideAddType(); }">Hide Add Type </a>
+        <a href="#" data-bind="visible:!ShowAddType(),click: function(){ $root.ShowOrHideAddType(); }">  Add Type </a>
+    </div>
+
+    <div data-bind="visible:ShowAddType()">
+
+        <fieldset>
+            <legend>Add Container</legend>
+
+            <label> Name </label>
+            <div>
+                <input type="text" data-bind="value: $root.Name" value="" maxlength="20" />
+            </div>
+
+
+            <div>
+                <input type="button" value="Save" data-bind="click:function(){ $root.SaveType(); }">   &nbsp; &nbsp;
+                <input type="button" value="cancell" data-bind="click:function(){ $root.ShowOrHideAddType(); }">
+            </div>
+
+        </fieldset>
+    </div>
+
+    <br />
+    <div style="text-align: right"> <input type="text" data-bind="value: $root.Search,valueUpdate: 'keyup'" maxlength="20"> </div>
+
+    <table width="90%" border="1" class="table table table-striped table-bordered table-condensed">
+
+        <tr>
+           
+            <th>
+                Name
+            </th>
+
+
+            <th style="width: 30%"> Action </th>
+        </tr>
+
+        <tbody data-bind="foreach: $root.Types">
+
+            <tr>
+
+               
+
+                <td>
+                    <span data-bind="text:Name"></span>
+                </td>
+
+
+
+                <td>
+                    <button data-bind="click:function(){$root.Type($data);}"> Edit  </button>
+                    &nbsp;&nbsp;&nbsp;
+
+                </td>
+
+
+            </tr>
+
+        </tbody>
+
+
+        <tr data-bind="if:Type() != null">
+
+           
+
+            <td valign="bottom">
+                <input type="text" data-bind="value:Type().Name" maxlength="20">
+            </td>
+
+
+            <td valign="bottom">
+                <input type="button" value="Update" data-bind="click:function(){ $root.UpdateType(); }">   &nbsp; &nbsp;
+                <input type="button" value="cancell" data-bind="click:function(){ $root.Type(null); }">
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        var cModel = new TypeModel();
+        cModel.BASE_URL('@Url.Content("~/")');
+         cModel.LoadList();
+
+        var node = $('#typeModeldiv')[0];
+        ko.applyBindings(cModel, node);
+
+    });
+
+
+</script>
+
+
+

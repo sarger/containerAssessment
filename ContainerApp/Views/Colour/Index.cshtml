@@ -1,0 +1,117 @@
+﻿<br />
+<br />
+<h3> Colour </h3>
+<br />
+<script src="~/Scripts/Container/ColourJs.js?id=3xxx002"></script>
+<div id="colourModeldiv">
+
+    <div id="errormessage" data-bind="text:ErrorMessage(),click: function(){ $root.ErrorMessage('');}"> </div>
+
+    <div style="text-align:right">
+        <a href="#" data-bind="visible:ShowAddColour(),click: function(){ $root.ShowOrHideAddColour(); }">Hide Add Colour </a>
+        <a href="#" data-bind="visible:!ShowAddColour(),click: function(){ $root.ShowOrHideAddColour(); }">  Add Colour </a>
+    </div>
+
+    <div data-bind="visible:ShowAddColour()">
+
+        <fieldset>
+            <legend>Add Container</legend>
+
+            <label> Name </label>
+            <div>
+                <input type="text" data-bind="value: $root.Name" value="" maxlength="20" />
+            </div>
+
+
+            <div>
+                <input type="button" value="Save" data-bind="click:function(){ $root.SaveColour(); }">   &nbsp; &nbsp;
+                <input type="button" value="cancell" data-bind="click:function(){ $root.ShowOrHideAddColour(); }">
+            </div>
+
+        </fieldset>
+    </div>
+
+    <br />
+    <div style="text-align: right"> <input type="text" data-bind="value: $root.Search,valueUpdate: 'keyup'" maxlength="20"> </div>
+
+    <table width="90%" border="1" class="table table table-striped table-bordered table-condensed">
+
+        <tr>
+           
+            <td>
+                Name
+            </td>
+
+
+            <td style="width: 30%"> Action </td>
+        </tr>
+
+        <tbody data-bind="foreach: $root.Colours">
+
+            <tr>
+
+        
+
+                <td>
+                    <span data-bind="text:Name"></span>
+                </td>
+
+
+
+                <td>
+                    <button data-bind="click:function(){$root.Colour($data);}"> Edit  </button>
+                </td>
+
+
+            </tr>
+
+        </tbody>
+
+
+        <tr data-bind="if:Colour() != null">
+
+       
+
+            <td valign="bottom">
+                <input type="text" data-bind="value:Colour().Name" maxlength="20">
+            </td>
+
+
+
+            <td valign="bottom">
+                <input type="button" value="Update" data-bind="click:function(){ $root.UpdateColour(); }">   &nbsp; &nbsp;
+                <input type="button" value="cancell" data-bind="click:function(){ $root.Colour(null); }">
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        var cModel = new ColourModel();
+        cModel.BASE_URL('@Url.Content("~/")');
+         cModel.LoadList();
+
+        var node = $('#colourModeldiv')[0];
+        ko.applyBindings(cModel, node);
+
+    });
+
+
+</script>
+
+
+

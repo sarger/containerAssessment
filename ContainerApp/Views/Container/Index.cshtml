@@ -1,0 +1,153 @@
+﻿<br />
+<br />
+<h3> Containers </h3>
+<br />
+<script src="~/Scripts/Container/ContainerJs.js?id=3xx002"></script>
+<div id="containerModeldiv">
+
+    <div id="errormessage" data-bind="text:ErrorMessage(),click: function(){ $root.ErrorMessage('');}"> </div>
+
+    <div style="text-align:right">
+        <a href="#" data-bind="visible:ShowAddContainer(),click: function(){ $root.ShowOrHideAddContainer(); }">Hide Add Container </a>
+        <a href="#" data-bind="visible:!ShowAddContainer(),click: function(){ $root.ShowOrHideAddContainer(); }">  Add Container </a>
+    </div>
+
+    <div data-bind="visible:ShowAddContainer()">
+
+        <fieldset>
+            <legend>Add Container</legend>
+
+            <label> Name </label>
+            <div>
+                <input type="text" data-bind="value: $root.Name" value="" maxlength="20" />
+            </div>
+
+            <label> Select Colour </label>
+            <div>
+                <select ID="colorSelect" data-bind="options: $root.Colours, optionsValue: 'Id', value:$root.ColourId, optionsCaption: 'Choose option...',     optionsText: function(i) { return i.Name  }">  </select>
+            </div>
+
+            <label> Select Type </label>
+            <div>
+                <select ID="TypeSelect" data-bind="options: $root.Types, optionsValue: 'Id', value:$root.TypeId, optionsCaption: 'Choose option...',     optionsText: function(i) { return i.Name  }">  </select>
+            </div>
+
+            <div>
+                <input type="button" value="Save" data-bind="click:function(){ $root.SaveContainer(); }">   &nbsp; &nbsp;
+                <input type="button" value="cancell" data-bind="click:function(){ $root.ShowOrHideAddContainer(); }">
+            </div>
+
+        </fieldset>
+    </div>
+
+    <br />
+ <div style="text-align: right"> <input type="text" data-bind="value: $root.Search,valueUpdate: 'keyup'" maxlength="20"> </div>
+    <table width="90%" border="1"  class="table table table-striped table-bordered table-condensed">
+
+        <tr>
+            <td class="style1">
+                Id
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                colour
+            </td>
+            <td>
+                Type
+                </td>
+
+<td style="width: 25%"> Action </td>
+        </tr>
+
+        <tbody data-bind="foreach: $root.Containers">
+
+            <tr>
+
+                <td>
+                    <span data-bind="text:Id"></span>
+                </td>
+
+                <td>
+                    <span data-bind="text:Name"></span>
+                </td>
+
+                <td>
+                    <span data-bind="text:Colour"></span>
+                </td>
+
+                <td>
+                    <span data-bind="text:Type"></span>
+                </td>
+
+                <td>
+                    <button data-bind="click:function(){$root.Container($data);}"> Edit  </button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button data-bind="click:function(){$root.Delete($data);}"> Delete  </button>
+                </td>
+
+
+            </tr>
+
+        </tbody>
+
+
+        <tr data-bind="if:Container() != null">
+
+            <td valign="bottom">
+                <span data-bind="text:Container().Id"></span>
+            </td>
+
+            <td valign="bottom">
+                <input type="text" data-bind="value:Container().Name" maxlength="20">
+            </td>
+
+            <td valign="bottom">
+
+                <select ID="ColourSelect" data-bind="options: $root.Colours, optionsValue: 'Id', value:$root.Container().ColourId, optionsCaption: 'Choose option...',     optionsText: function(i) { return i.Name  }">  </select>
+            </td>
+
+            <td valign="bottom">
+
+                <select ID="TypeSelect" data-bind="options: $root.Types, optionsValue: 'Id', value:$root.Container().TypeId, optionsCaption: 'Choose option...',     optionsText: function(i) { return i.Name  }">  </select>
+            </td>
+
+            <td valign="bottom">
+                <input type="button" value="Update" data-bind="click:function(){ $root.UpdateContainer(); }">   &nbsp; &nbsp;
+                <input type="button" value="cancel" data-bind="click:function(){ $root.Container(null); }">
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        var cModel = new ContainerModel();
+        cModel.BASE_URL('@Url.Content("~/")');
+        cModel.initializeLookUp();
+        cModel.LoadList();
+
+        var node = $('#containerModeldiv')[0];
+        ko.applyBindings(cModel, node);
+
+    });
+
+
+</script>
+
+
+

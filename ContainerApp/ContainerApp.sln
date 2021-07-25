@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerApp", "ContainerApp.csproj", "{F122A079-8900-4B6C-A6D1-C94DA4706A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{3866F935-6470-4B1E-988C-7886C7A15F02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F122A079-8900-4B6C-A6D1-C94DA4706A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F122A079-8900-4B6C-A6D1-C94DA4706A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F122A079-8900-4B6C-A6D1-C94DA4706A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F122A079-8900-4B6C-A6D1-C94DA4706A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3866F935-6470-4B1E-988C-7886C7A15F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3866F935-6470-4B1E-988C-7886C7A15F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3866F935-6470-4B1E-988C-7886C7A15F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3866F935-6470-4B1E-988C-7886C7A15F02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E7FDE22-15BB-4D0D-A264-80511BAE964E}
+	EndGlobalSection
+EndGlobal
