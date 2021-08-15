@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\ContainersApp\\Common\\Common.csproj": {}
+    "D:\\Development\\ContainerAssesement\\containerAssessment\\Common\\Common.csproj": {}
   },
   "projects": {
-    "D:\\Development\\ContainersApp\\Common\\Common.csproj": {
+    "D:\\Development\\ContainerAssesement\\containerAssessment\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\ContainersApp\\Common\\Common.csproj",
+        "projectUniqueName": "D:\\Development\\ContainerAssesement\\containerAssessment\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\Development\\ContainersApp\\Common\\Common.csproj",
+        "projectPath": "D:\\Development\\ContainerAssesement\\containerAssessment\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\Mnelisi Mthuli\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\ContainersApp\\Common\\obj\\",
+        "outputPath": "D:\\Development\\ContainerAssesement\\containerAssessment\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
